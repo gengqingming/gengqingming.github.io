@@ -11,7 +11,7 @@
 
     <title>
         
-        
+        一套尺寸完美适配移动端 - undefined
         
     </title>
 
@@ -59,7 +59,7 @@
                     <span>主页</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
@@ -94,6 +94,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    
+</div>
+    
 </div>
 
 
@@ -120,65 +124,39 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        一套尺寸完美适配移动端
+    </div>
 
-<div class="archives-container">
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2019-10-28 09:44:08</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#web" title="web">web</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p> 一套设计完美适配各种手机尺寸，这篇文章适合有一定的前端基础的人去看。<br> 先直接上代码把:<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--移动端版本兼容 --&gt;</span><br><span class="line">   &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">       var phoneWidth = parseInt(window.screen.width);</span><br><span class="line">       var phoneScale = phoneWidth / 640;</span><br><span class="line">       var ua = navigator.userAgent;</span><br><span class="line">       if (/Android (\d+\.\d+)/.test(ua)) &#123;</span><br><span class="line">           document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=640, minimum-scale = &apos; + phoneScale + &apos;, maximum-scale = &apos; + phoneScale + &apos;&quot;&gt;&apos;);</span><br><span class="line">       &#125; else &#123;</span><br><span class="line">           document.write(&apos;&lt;meta name=&quot;viewport&quot; content=&quot;width=640, user-scalable=no&quot;&gt;&apos;);</span><br><span class="line">       &#125;</span><br><span class="line">   &lt;/script&gt;</span><br><span class="line">   &lt;!--移动端版本兼容 end --&gt;</span><br></pre></td></tr></table></figure></p>
+<p>先了解几个概念把：<br>1.ideal viewPort移动端理想尺寸(通常为设计稿的尺寸(一般设计稿尺寸推荐使用，320/640/750))<br>2.layout viewPort 移动端网页的可视区域(980/1024)<br>3.visual view 屏幕的尺寸<br>原理：<br>我们现在已一款安卓手机屏幕尺寸(600*960)为例,当我们设计稿的尺寸为640，第一步：我们设置meta viewPort width=640时，这个时候我们的layout viewPort<br>     的宽度变为640而不是980了，但是我们的网页尺寸还是比屏幕大，这个时候我们就要去把网页进行去缩放了。sacle=visualview/640 就等于我们要缩放的比例了，所以我们的minimum-scale=sacle，这种时候我们的网页就和我们的屏幕完美的适配了。<br>备注：<br>在iphone和ipad上，无论你给viewport设的宽的是多少，如果没有指定默认的缩放值，则iphone和ipad会自动计算这个缩放值，以达到当前页面不会出现横向滚动条(或者说viewport的宽度就是屏幕的宽度)的目的,所以我们的ipone就不需要去考虑了</p>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2019">
-                    <span class="tag-text">2019</span>
-                </span>
-    <ul>
         
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>10-28</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2019/10/28/sizeAdaptation/">
-                        <span>
-                            一套尺寸完美适配移动端
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-04</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2019/09/04/webpack/">
-                        <span>
-                            你要搞懂的几个webpack的概念
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>07-10</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2019/07/10/hello-world/">
-                        <span>
-                            Hello World
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
 
-    </ul>
-</div>
+        <div id="lv-container">
+        </div>
 
+    </div>
 </div>
 
     </div>
@@ -219,7 +197,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
